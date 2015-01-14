@@ -453,6 +453,7 @@ class @FunctionBlockDiagram
           connection.visual.remove()
       @connections = @connections.filter (item) -> remove_connections.indexOf(item) < 0
       @currentSelection.remove()
+      delete @fbs[fb.fb_name]
       @currentSelection = null
       @interactionLayer.draw()
 
