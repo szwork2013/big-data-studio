@@ -1,0 +1,11 @@
+//
+   Created by paulmuston on 13/12/14.
+.dialog
+  .modal-header
+    h3 {{blockName}}
+    span.glyphicon.glyphicon-remove.close.pull-right(ng-click="close()")
+  .modal-innards
+    .modal-body
+      img(src="/tmp/{{graph._id}}_{{blockName}}.png")
+  .modal-footer
+

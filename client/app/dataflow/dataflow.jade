@@ -9,6 +9,15 @@ div(ng-include='"components/navbar/navbar.html"')
               li.list-group-item(data-item-name="{{item}}" ng-repeat="item in section.items" draggable="true" ondragstart="return dragStart(event)") {{item}}
     .col-lg-8
       .editor
+        input(type="submit", value="Save", onclick="saveDrawing2()")
+        input(type="submit", value="Execute", onclick="executeDrawing()")
+        input(type="submit", value="DeleteFB", onclick="deleteFB()")
+        input(type="submit", value="ChartFB", onclick="chartFB()")
+        input(type="submit", value="DescribeFB", onclick="describeFB()")
         #drawing
     .col-lg-2
       h3 Parameters
+        span.glyphicon.glyphicon-cog.edit-params(ng-click="editParam()")
+      div(ng-repeat='item in parameters')
+        h4 {{item.name}}:
+        p {{item.value}}

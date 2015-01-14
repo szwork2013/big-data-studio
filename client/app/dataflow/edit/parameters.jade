@@ -1,0 +1,18 @@
+//
+   Created by paulmuston on 13/08/2014.
+.dialog
+  .modal-header
+    h3 {{blockName}}
+    span.glyphicon.glyphicon-remove.close.pull-right(ng-click="close()")
+  .modal-innards
+    .modal-body
+      form.param-form
+        .modal-item(ng-repeat='parameter in editParameters')
+          .content
+            .form-group(ng-switch='parameter.fieldOptions.inputType')
+              h4(ng-switch-when='textarea') {{parameter.name}}
+                textarea.form-control(ng-model="parameter.value")
+              h4(ng-switch-default) {{parameter.name}}
+                input.form-control(ng-model="parameter.value", type="text")
+  .modal-footer
+    button.btn.btn-primary.pull-right(type="button",ng-click="save(form)") Save
