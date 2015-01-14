@@ -22,6 +22,10 @@ exports.show = function(req, res) {
 
 // Creates a new dataflow in the DB.
 exports.create = function(req, res) {
+  var newDataflow = req.body;
+  newDataflow.owner = req.user.email;
+  if(!newDataflow.nodes) {newDataflow.nodes=[];}
+  if(!newDataflow.edges) {newDataflow.edges=[];}
   Dataflow.create(req.body, function(err, dataflow) {
     if(err) { return handleError(res, err); }
     return res.json(201, dataflow);
