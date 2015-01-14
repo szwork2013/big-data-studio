@@ -8,5 +8,5 @@ module.exports = {
     uri: 'mongodb://localhost/bigdatastudio-dev'
   },
 
-  seedDB: true
+  seedDB: false
 };
