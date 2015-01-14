@@ -3,8 +3,14 @@
 angular.module 'bigDataStudioApp'
 .controller 'NavbarCtrl', ($scope, $location, Auth) ->
   $scope.menu = [
-    title: 'Home'
-    link: '/'
+    {
+      title: 'Home'
+      link: '/'
+    },
+    {
+      title: 'Dataflows'
+      link: '/dataflows'
+    }
   ]
   $scope.isCollapsed = true
   $scope.isLoggedIn = Auth.isLoggedIn
