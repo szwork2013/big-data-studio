@@ -1,2 +1,14 @@
-.col-md-12
-    | This is the dataflow view.
+div(ng-include='"components/navbar/navbar.html"')
+.container
+  .row
+    .col-lg-2
+      .menu
+        accordion(close-others="oneAtATime")
+          accordion-group(heading="{{section.name}}" ng-repeat="section in sections")
+            ul.list-group
+              li.list-group-item(data-item-name="{{item}}" ng-repeat="item in section.items" draggable="true" ondragstart="return dragStart(event)") {{item}}
+    .col-lg-8
+      .editor
+        #drawing
+    .col-lg-2
+      h3 Parameters
